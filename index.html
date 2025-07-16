@@ -30,10 +30,6 @@
       background-size: cover;
       height: 60vh;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       color: var(--white);
     }
 
@@ -47,19 +43,29 @@
       z-index: 0;
     }
 
-    .header-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 2rem;
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
     }
 
-    .header-content img {
-      height: 90px;
-      margin-bottom: 1rem;
+    .logo-container img {
+      height: 80px;
+      border-radius: 12px;
     }
 
-    .header-content h1 {
+    .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+      padding: 0 1rem;
+    }
+
+    .header-text h1 {
       font-size: 2rem;
       font-weight: 500;
     }
@@ -101,12 +107,12 @@
     }
 
     @media (max-width: 600px) {
-      .header-content h1 {
-        font-size: 1.4rem;
+      .logo-container img {
+        height: 50px;
       }
 
-      .header-content img {
-        height: 50px;
+      .header-text h1 {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -114,9 +120,11 @@
 <body>
 
   <header>
-    <div class="header-content">
+    <div class="logo-container">
       <img src="Logo.png" alt="SGV Logo">
-      <h1>Welcome</h1>
+    </div>
+    <div class="header-text">
+      <h1>SGV: Backing Bold Ideas That Drive Impact</h1>
     </div>
   </header>
 
